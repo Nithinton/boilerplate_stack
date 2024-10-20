@@ -1,0 +1,10 @@
+# Common
+*.log
+*.env
+*.sqlite3
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+__pycache__/
+*.pyc
