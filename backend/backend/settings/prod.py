@@ -45,15 +45,19 @@ LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
     "handlers": {
-         "file": {
-            "class": "logging.FileHandler",
-            "filename": "backend.log",
+        "file": {
+            "class": "logging.handlers.TimedRotatingFileHandler",
+            "filename": os.path.join(BASE_DIR, 'bakend.log'),
+            'when': 'midnight',
+            'interval': 1,
+            'backupCount': 7,
             "formatter": "verbose",
+            'encoding': 'utf-8', 
         }
     },
     "formatters": {
         "verbose": {
-            "format": "{asctime} [{levelname}] - {module} - {name} - [{process:d} {thread:d}] - {message}",
+            "format": "{asctime} [{levelname}] - {name}.{funcName} - Line: {lineno} - {message} - (PID: {process}, Thread: {thread})",
             "style": "{",
         }
     },
