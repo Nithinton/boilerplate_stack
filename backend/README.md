@@ -47,3 +47,10 @@ python
 poetry
 vscode
 make
+
+
+__ Feature __
+* Split settings for diffent environment.
+* Diferent Django Loggers diffenrt environment.
+* Using environment files 
+
